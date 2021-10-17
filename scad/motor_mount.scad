@@ -72,14 +72,31 @@ difference()
                         translate([0, 0, h1+h2-2.5])
                         rotate([0, 0, 20])
                         {
-                            nutHole(3);
-                            translate([0, 0, 2])
-                            nutHole(3);
+                            if( x > 0 || y > 0)
+                            {
+                                translate([0, 0, 2])
+                                nutHole(3);
+                                
+                                nutHole(3);
+                            }
+                            else
+                            {
+                                translate([0, 0, -3.5])
+                                nutHole(3);
+                            }
                         }
                     }
                 }
             }
         }
+        
+        translate([-5, -20, 2])
+        cube([10, 8, 6]);
+//        x = 10;
+//        y = 8;
+//        z = 4;
+//        translate([-x/2, -16 - y/2, h2 - z])
+//        cube([x, y, z]);
     }
 }
 
